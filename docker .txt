@@ -1,0 +1,49 @@
+مايكل طلعت ذكري 
+
+section: 1 
+
+  
+
+docker build -t attendance-image . 
+
+  
+
+docker run -d -p 3000:3000 --name attendance-container -v attendance_data:/app attendance-image 
+
+  
+
+docker ps 
+
+  
+
+docker stop attendance-container 
+
+  
+
+docker rm attendance-container 
+
+  
+
+docker rmi attendance-image 
+
+  
+
+docker volume create attendance_data 
+
+  
+
+docker run -d -p 3000:3000 --name attendance-container -v attendance_data:/app attendance-image 
+
+  
+
+docker volume ls 
+
+  
+
+docker volume inspect attendance_data 
+
+docker volume rm attendance_data 
+
+ 
+
+docker volume prune 
